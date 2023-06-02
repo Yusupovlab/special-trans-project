@@ -1,5 +1,5 @@
 <template>
-    <section class="hero h-screen ">
+    <section class="hero h-screen  bg bg-right">
         
     </section>
 </template>
@@ -9,5 +9,7 @@
 background-position: center;
 background-size: cover ;
 background-repeat: no-repeat ;
+
+
 }
 </style>
