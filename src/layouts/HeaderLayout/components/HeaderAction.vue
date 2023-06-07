@@ -1,6 +1,6 @@
 <template>
   <div class="header-action ml-auto">
-    <TheButton class="hidden lg:block" v-if="true">Заказать звонок</TheButton>
+    <TheButton class="hidden lg:block" v-if="scrolled">Заказать звонок </TheButton>
     <button
       class="burger-btn w-5 h-5 flex justify-center items-center lg:hidden"
       @click="$emit('openMenu')"
@@ -15,5 +15,8 @@ export default {
   components: {
     TheButton,
   },
+  props:{
+   scrolled:Boolean
+  }
 };
 </script>

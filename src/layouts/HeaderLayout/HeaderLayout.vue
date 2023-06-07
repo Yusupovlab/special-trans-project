@@ -1,14 +1,17 @@
 <template>
-  <header class="header fixed top-0 w-full">
+  <header
+    class="header fixed top-0 w-full  transition-all lg:pt-8"
+    :class="isScrolled? 'header-scrolled lg:pt-0  ' : ''"
+  >
     <div class="container flex items-center">
       <HeaderLogo />
       <HeaderMenu />
-      <HeaderAction @openMenu="toggleMenu" />
-      <Transition name="menu">
-        <HiddenMenu v-if="isOpen" @closeMenu="toggleMenu" />
-      </Transition>
+      <HeaderAction @openMenu="toggleMenu" :scrolled="isScrolled"/>
     </div>
   </header>
+  <Transition name="menu">
+    <HiddenMenu v-if="isOpen" @closeMenu="toggleMenu" />
+  </Transition>
 </template>
 <script>
 import HeaderAction from "./components/HeaderAction.vue";
@@ -21,6 +24,7 @@ export default {
   data() {
     return {
       isOpen: false,
+      isScrolled: false,
     };
   },
   methods: {
@@ -28,15 +32,30 @@ export default {
       this.isOpen = !this.isOpen;
     },
   },
+  mounted(){
+    window.addEventListener('scroll',()=>{
+      if(window.scrollY){
+        this.isScrolled = true
+      }else( this.isScrolled = false)
+    })
+  }
+
 };
 </script>
 <style>
 .menu-enter-active,
 .menu-leave-active {
-  transition:  0.5s ease;
+  transition: 0.5s ease;
 }
 
 .menu-enter-from,
 .menu-leave-to {
- transform: translateX(100%) translateY(-100%) ;
-}</style>
+  transform: translateX(100%) translateY(-100%);
+}
+.header-scrolled {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+
+
+}
+</style>
