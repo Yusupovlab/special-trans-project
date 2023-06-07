@@ -1,7 +1,7 @@
 <template>
   <header
-    class="header fixed top-0 w-full  transition-all lg:pt-8"
-    :class="isScrolled? 'header-scrolled lg:pt-0  ' : ''"
+    class="header fixed top-0 w-full  transition-all "
+    :class="isScrolled? 'header-scrolled lg:pt-0  ' : 'lg:pt-8 '"
   >
     <div class="container flex items-center">
       <HeaderLogo />
