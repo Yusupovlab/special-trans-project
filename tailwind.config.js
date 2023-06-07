@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: "#27AE60",
-        dark: "#1D1D1B ",
+        'brand': "#27AE60",
+        'dark': "#1D1D1B ",
+        'light-gray': "#A8A8A8",
       },
     },
     container: {

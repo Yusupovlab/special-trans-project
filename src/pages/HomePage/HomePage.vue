@@ -1,15 +1,16 @@
 <template>
   <div class="home-page">
 <HeroSection />
+<Services/>
 
   </div>
 </template>
 
 <script>
-import TheButton from "../../ui/TheButton.vue";
-import TheTitle from "../../ui/TheTitle.vue";
+
 import HeroSection from "./sections/HeroSection.vue";
+import Services from './sections/ServicesSection.vue';
 
 export default { 
-    components: { TheButton, TheTitle, HeroSection } };
+    components: {  HeroSection, Services } };
 </script>
