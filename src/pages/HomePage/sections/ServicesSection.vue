@@ -16,7 +16,7 @@
 
 <script>
 import TheTitle from "../../../ui/TheTitle.vue";
-import ServicesCard from "../components/servicesCard.vue";
+import ServicesCard from "../components/ServicesCard.vue";
 
 export default {
   components: { TheTitle, ServicesCard },
